@@ -13,30 +13,32 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setLoaded(!loaded)
+      setLoaded(true)
     }, 3000)
-  })
+  }, [loaded]);
 
   if (loaded === false) {
+    
     return (
       <>
         <h1>Website loading...</h1>
         <button onClick={handleToggle}>Toggle State</button>
-      </> 
-    )
-  } 
-    return (
-      <>
-        <h1 className="text-center">Greetings!</h1>
-  
-        <Greeter name="Seth" phrase="Yo" />
-        <Greeter name="Katelyn" phrase="Hey there" />
-        <Greeter name="Ben" phrase="Good to see you" />
-  
-        <span className="mr-1">Username</span><input value={username} onChange={(e => setUsername(e.target.value))} />
-        <p>You are logging in as: {username}</p>
       </>
     )
+    
+  }
+  return (
+    <>
+      <h1 className="text-center">Greetings!</h1>
+
+      <Greeter name="Seth" phrase="Yo" />
+      <Greeter name="Katelyn" phrase="Hey there" />
+      <Greeter name="Ben" phrase="Good to see you" />
+
+      <span className="mr-1">Username</span><input value={username} onChange={(e => setUsername(e.target.value))} />
+      <p>You are logging in as: {username}</p>
+    </>
+  )
 }
 
 export default App;
