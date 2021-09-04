@@ -18,14 +18,14 @@ const App = () => {
   }, [loaded]);
 
   if (loaded === false) {
-    
+
     return (
       <>
-        <h1>Website loading...</h1>
-        <button onClick={handleToggle}>Toggle State</button>
+        <h1 className="m-3 text-center">Website loading...</h1>
+        <button className="btn btn-primary mx-auto d-block shadow" onClick={handleToggle}>Toggle State</button>
       </>
     )
-    
+
   }
   return (
     <>
@@ -34,9 +34,10 @@ const App = () => {
       <Greeter name="Seth" phrase="Yo" />
       <Greeter name="Katelyn" phrase="Hey there" />
       <Greeter name="Ben" phrase="Good to see you" />
-
-      <span className="mr-1">Username</span><input value={username} onChange={(e => setUsername(e.target.value))} />
-      <p>You are logging in as: {username}</p>
+      <div className="text-center">
+        <span className="mr-1">Username</span><input value={username} onChange={(e => setUsername(e.target.value))} />
+        <p>You are logging in as: {username}</p>
+      </div>
     </>
   )
 }
